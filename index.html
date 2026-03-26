@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VirtualCar - Mockup de Alta Fidelidad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Variables de diseño basadas en la Estrategia UX */
+    :root{
+      --turquesa:#00ffe6; 
+      --negro:#000000; 
+      --blanco:#ffffff; 
+      --dorado:#a8990b; 
+      --gris-bg:#f6f7f8; 
+      --max-width:1200px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:'Roboto', sans-serif;margin:0;color:var(--negro);background:var(--gris-bg);-webkit-font-smoothing:antialiased}
+    h1,h2,h3,h4,h5{font-family:'Montserrat', sans-serif;} 
+    a{color:inherit;text-decoration:none}
+
+    .container{max-width:var(--max-width);margin:0 auto;padding:0 24px}
+
+    /* HEADER & TOP BAR */
+    header{background:linear-gradient(180deg,#0a0a0a 0%,var(--negro) 100%);color:var(--blanco);box-shadow:0 4px 12px rgba(0,0,0,0.2)}
+    .topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px}
+    .brand{display:flex;align-items:center;gap:30px}
+    .logo{display:flex;align-items:center;gap:10px;font-family:Montserrat, sans-serif;font-weight:700}
+    .logo .mark{width:36px;height:36px;border-radius:50%;background:var(--turquesa);display:flex;align-items:center;justify-content:center;color:var(--negro);font-weight:800;font-size:20px}
+    nav{display:flex;gap:20px;align-items:center}
+    nav a{padding:8px 12px;border-radius:6px;font-weight:500;transition:background 0.3s}
+    nav a:hover{background:#1a1a1a}
+
+    .header-actions{display:flex;align-items:center;gap:12px}
+    .btn-cta{background:var(--turquesa);color:var(--negro);padding:10px 18px;border-radius:10px;font-weight:700;border:none;cursor:pointer;font-family:Montserrat;transition:transform 0.15s, box-shadow 0.15s}
+    .btn-cta:hover{transform:translateY(-2px);box-shadow:0 4px 8px rgba(0,255,230,0.5)}
+    .icon-btn{background:none;border:none;color:var(--blanco);font-size:18px;cursor:pointer;padding:8px;border-radius:50%;transition:background 0.3s}
+    .icon-btn:hover{background:#1a1a1a}
+
+    /* HERO SECTION */
+    .hero {
+  display: grid;
+  grid-template-columns: 1fr 500px;
+  align-items: center;
+  gap: 40px;
+  padding: 60px 0;
+  
+  /* Usamos tu imagen local con una capa de protección para el texto */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+                    url('file:///C:/Users/LENOVO/Downloads/Banner-shopify.webp');
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom: 2px solid var(--turquesa); /* Un detalle para unirlo con el diseño */
+}
+
+.hero-content { color: var(--blanco); position: relative; z-index: 2; }
+.hero h1 { font-family: 'Montserrat'; font-size: 48px; line-height: 1.1; margin: 0; color: var(--blanco); }
+.hero p { margin: 10px 0 24px; color: #b2f5ff; font-size: 18px; }
+
+    .search-widget{background:var(--blanco);padding:20px;border-radius:16px;box-shadow:0 12px 30px rgba(0,0,0,0.4)}
+    .search-row{display:flex;gap:10px;align-items:center}
+    .search-row select,.search-row input{padding:12px;border-radius:10px;border:2px solid #e0e0e0;font-size:16px;flex:1;font-family:Roboto}
+    .search-row .search-btn{flex:0 0 auto;background:var(--turquesa);border:none;padding:12px 24px;border-radius:10px;cursor:pointer;font-weight:700;font-family:Montserrat}
+    .search-row .search-btn:hover{background:#4dfff0}
+    .info-badges{margin-top:18px;display:flex;gap:15px;align-items:center}
+    .badge{background:#101010;color:#c0fffc;padding:8px 12px;border-radius:8px;font-size:14px;font-family:Roboto, sans-serif;font-weight:500}
+    .badge i{color:var(--dorado);margin-right:6px}
+    
+    .services-section{transform:translateY(-30px);position:relative;z-index:10}
+    .services{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .service-card{background:var(--blanco);padding:20px;border-radius:14px;display:flex;gap:15px;align-items:center;box-shadow:0 10px 30px rgba(0,0,0,0.08);border-left:4px solid var(--turquesa)}
+    .service-card .sicon{font-size:24px;color:var(--turquesa)}
+    .service-card h4{margin:0;font-size:16px;font-weight:700;color:var(--negro)}
+    .service-card p{margin:2px 0 0;font-size:14px;color:#666}
+
+    .section-title{font-family:Montserrat;font-size:32px;margin:50px 0 20px;color:var(--negro);font-weight:800}
+    .categories{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .cat-card{background:var(--blanco);padding:30px;border-radius:16px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,0.05);cursor:pointer;transition:transform 0.3s, box-shadow 0.3s;border:1px solid #e0e0e0}
+    .cat-card:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(0,0,0,0.1)}
+    .cat-card .icon{font-size:40px;color:var(--turquesa)}
+    .cat-card span{display:block;margin-top:15px;font-weight:700;font-family:Montserrat;color:#333}
+
+    .products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+    .product{background:var(--blanco);padding:16px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.05);display:flex;flex-direction:column;border:1px solid #f0f0f0;transition:box-shadow 0.3s}
+    .product:hover{box-shadow:0 12px 25px rgba(0,0,0,0.1)}
+    .product .thumb{height:160px;border-radius:10px;background:#e9faff;display:flex;align-items:center;justify-content:center;margin-bottom:15px;overflow:hidden}
+    .product .thumb svg{opacity:0.6;fill:var(--turquesa)}
+    .product h5{margin:0 0 5px;font-size:16px;font-weight:700;font-family:Montserrat}
+    .product-meta{font-size:13px;color:#666;margin-bottom:10px}
+    .price{font-weight:800;font-size:20px;color:var(--negro);margin-top:auto}
+    .price small{font-size:14px;font-weight:400;color:#888;text-decoration:line-through;margin-left:5px}
+    .product .add{margin-top:10px;padding:12px;border-radius:10px;background:var(--turquesa);border:none;font-weight:700;cursor:pointer;font-family:Montserrat;transition:background 0.3s}
+    .product .add:hover{background:#4dfff0}
+    
+    .promo-tag{background:var(--dorado);color:#222;font-size:12px;font-weight:700;padding:4px 8px;border-radius:6px;position:absolute;top:5px;right:5px;z-index:2}
+
+    .testimonials{margin-top:50px}
+    .testimonial-card{background:var(--blanco);padding:30px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.05);border-top:5px solid var(--turquesa)}
+    .testimonial-card blockquote{font-size:18px;line-height:1.6;font-style:italic;color:#333;margin:0}
+    .test-controls{display:flex;gap:8px;margin-top:20px;justify-content:center}
+    .dot{width:10px;height:10px;border-radius:50%;background:#e6e6e6;cursor:pointer}
+    .dot.active{background:var(--turquesa)}
+
+    footer{background:#0b0b0b;color:var(--blanco);padding:40px 0;margin-top:60px}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:30px}
+    .socials{display:flex;gap:10px;margin-top:10px}
+    .socials a{color:var(--turquesa);font-size:20px;transition:color 0.3s}
+    .socials a:hover{color:var(--dorado)}
+    footer h4{font-family:Montserrat;font-size:18px;margin-bottom:12px;color:var(--turquesa)}
+    footer a{color:#cfcfcf;font-size:15px;line-height:2.2;transition:color 0.3s}
+    footer a:hover{color:var(--blanco)}
+
+    .float-cart{position:fixed;right:20px;bottom:20px;background:var(--turquesa);color:var(--negro);padding:15px 20px;border-radius:14px;box-shadow:0 8px 26px rgba(0,0,0,0.25);font-weight:700;cursor:pointer;z-index:1000}
+    .phone-floating{position:fixed;right:20px;bottom:90px;background:var(--dorado);color:var(--negro);padding:10px 15px;border-radius:12px;font-weight:700;box-shadow:0 4px 15px rgba(0,0,0,0.2);z-index:1000}
+    .phone-floating i{margin-right:8px}
+
+    .cart-panel{position:fixed;right:0;top:0;height:100vh;width:400px;background:var(--blanco);box-shadow:-12px 0 40px rgba(0,0,0,0.35);transform:translateX(100%);transition:transform .3s ease-in-out;padding:25px;z-index:2000;display:flex;flex-direction:column}
+    .cart-panel.open{transform:translateX(0)}
+    .cart-item{display:flex;gap:15px;align-items:center;padding:15px 0;border-bottom:1px solid #f0f0f0}
+    .cart-item-thumb{width:60px;height:60px;border-radius:8px;background:#f2f2f3;display:grid;place-items:center}
+    .cart-actions{display:flex;gap:10px;margin-top:15px}
+    .cart-actions button{padding:8px 12px;border-radius:8px;border:1px solid #e0e0e0;cursor:pointer;font-weight:600}
+    .checkout-btn{background:var(--turquesa) !important;color:var(--negro);border:none !important;padding:15px !important;font-size:16px;margin-top:20px;font-family:Montserrat}
+    .cart-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;border-bottom:2px solid var(--turquesa);padding-bottom:10px}
+    .cart-close-btn{background:none;border:none;font-size:24px;cursor:pointer}
+    .cart-items-list{flex-grow:1;overflow-y:auto}
+
+    @media (max-width:1100px){ .footer-grid{grid-template-columns:repeat(3,1fr)} }
+    @media (max-width:1000px){ .hero{grid-template-columns:1fr;padding:40px 0} .services{grid-template-columns:repeat(2,1fr)} .services-section{transform:none} }
+    @media (max-width:768px){ .brand{flex-direction:column;align-items:flex-start;gap:10px} nav{margin-top:10px;gap:10px;flex-wrap:wrap} .categories,.products-grid,.footer-grid{grid-template-columns:repeat(2,1fr)} .hero h1{font-size:36px} .search-row{flex-wrap:wrap} .search-row select, .search-row input, .search-row .search-btn{flex-basis:48%} .search-row .search-btn{flex-basis:100%;} .cart-panel{width:100%} }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container topbar" style="display: flex; align-items: center; justify-content: space-between; min-height: 120px; padding: 10px 0;">
+    <div class="brand">
+      <div class="logo">
+        <img src="https://i.postimg.cc/nzS0Qw3F/www-virtualcar-com-co-tienda-de-repuestos-automotrices-Bogota-Colombia-Cel3213537843-Blanco-250x150.png" 
+             alt="VirtualCar" 
+             style="width: 250px; height: 150px; object-fit: contain; display: block;">
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 25px;">
+      <nav aria-label="main-nav" style="display: flex; gap: 20px;">
+        <a href="nosotros.html"><i class="fas fa-info-circle"></i> Nosotros</a>
+        <a href="ofertas.html"><i class="fas fa-search-dollar"></i> Ofertas</a>
+        <a href="Migaraje.html"><i class="fas fa-tools"></i> Mi Garaje</a>
+        <a href="soporte.html"><i class="fas fa-headset"></i> Soporte</a>
+      </nav>
+      <div class="header-actions" style="display: flex; align-items: center; gap: 12px;">
+        <button class="icon-btn"><i class="fas fa-user-circle"></i></button>
+        <button class="icon-btn" id="open-cart-header"><i class="fas fa-shopping-cart"></i> <span id="cart-count-header">(0)</span></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero" role="banner">
+    <div class="container hero-content">
+      <h1>Encuentra las autopartes que buscas<br>con compatibilidad garantizada.</h1>
+      <p>Compra rápido y con confianza — selecciona tu vehículo para ver solo las piezas compatibles.</p>
+      <div class="search-widget">
+        <form id="compat-form" onsubmit="return false">
+          <div style="font-weight:700;margin-bottom:12px;font-family:Montserrat;color:var(--negro)">¿Qué vehículo tienes?</div>
+          <div class="search-row">
+            <select id="marca"><option value="">Marca</option><option value="toyota">Toyota</option><option value="chevrolet">Chevrolet</option><option value="mazda">Mazda</option></select>
+            <select id="modelo"><option value="">Modelo</option></select>
+            <select id="anno"><option value="">Año</option></select>
+            <button class="search-btn" id="search-btn"><i class="fas fa-filter"></i> Buscar Repuestos</button>
+          </div>
+        </form>
+        <div style="margin-top:14px;display:flex;gap:12px;align-items:center;font-size:14px;color:#333">
+          <div style="display:flex;gap:8px;align-items:center;font-weight:500"><i class="fas fa-lock" style="color:var(--turquesa)"></i> Pasarela: Mercado Pago</div>
+          <div style="margin-left:auto;color:#666;font-size:13px"><i class="fas fa-phone-alt"></i> Contacto: <strong>321 353 7843</strong></div>
+        </div>
+      </div>
+      <div class="info-badges">
+        <div class="badge"><i class="fas fa-certificate"></i> Garantía y Certificación</div>
+        <div class="badge"><i class="fas fa-shipping-fast"></i> Envío Rápido a toda Colombia</div>
+        <div class="badge"><i class="fas fa-money-check-alt"></i> Pagos Seguros</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <main class="container">
+    <section class="services-section">
+      <div class="services">
+        <div class="service-card"><div class="sicon"><i class="fas fa-shield-alt"></i></div><div><h4>Garantía de Compatibilidad</h4><p>El repuesto que pides es el que necesitas.</p></div></div>
+        <div class="service-card"><div class="sicon"><i class="fas fa-truck"></i></div><div><h4>Envío Express</h4><p>Recibe rápido en toda Colombia.</p></div></div>
+        <div class="service-card"><div class="sicon"><i class="fas fa-credit-card"></i></div><div><h4>Pagos con Mercado Pago</h4><p>Transacciones 100% seguras.</p></div></div>
+        <div class="service-card"><div class="sicon"><i class="fas fa-medal"></i></div><div><h4>Productos Certificados</h4><p>Solo autopartes nuevas.</p></div></div>
+      </div>
+    </section>
+
+    <h2 class="section-title">Explora por Categoría</h2>
+<section class="categories">
+  <div class="cat-card" data-cat="frenos">
+    <div class="icon"><i class="fas fa-circle-notch"></i></div>
+    <span>Sistema de Frenos</span>
+  </div>
+
+  <div class="cat-card" data-cat="motor">
+    <div class="icon"><i class="fas fa-car-battery"></i></div>
+    <span>Motor y Componentes</span>
+  </div>
+
+  <div class="cat-card" data-cat="suspension">
+    <div class="icon"><i class="fas fa-tools"></i></div>
+    <span>Suspensión y Dirección</span>
+  </div>
+
+  <div class="cat-card" data-cat="electricos">
+    <div class="icon"><i class="fas fa-lightbulb"></i></div>
+    <span>Eléctricos e Iluminación</span>
+  </div>
+</section>
+
+    <h2 class="section-title">Repuestos Destacados para tu <span id="current-car">Vehículo</span></h2>
+    <section class="products-grid" id="products"></section>
+
+    <section class="testimonials">
+      <h2 class="section-title">La Opinión de Nuestros Clientes</h2>
+      <div class="testimonial-card">
+        <blockquote id="testimonial-text">"Excelente atención y los repuestos fueron exactamente los que necesitaba."</blockquote>
+        <div style="margin-top:15px;font-weight:700;color:var(--turquesa)">Juan Pérez (Toyota Corolla 2015)</div>
+        <div class="test-controls" id="test-controls">
+          <div class="dot active"></div><div class="dot"></div><div class="dot"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3 style="color:var(--turquesa)">VIRTUALCAR</h3>
+        <p style="color:#cfcfcf;font-size:14px">Compatibilidad y seguridad garantizada.</p>
+        <div style="margin-top:15px;color:#cfcfcf;font-size:14px">© 2026 virtualcar.com.co</div>
+      </div>
+      <div>
+        <h4>Información</h4>
+        <ul style="list-style:none;padding:0;margin:0;">
+          <li><a href="nosotros.html">Quienes Somos</a></li>
+          <li><a href="mision.html">Misión y Visión</a></li>
+          <li><a href="faq.html">Preguntas Frecuentes</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul style="list-style:none;padding:0;margin:0;">
+          <li><a href="terminos.html">Términos y Condiciones</a></li>
+          <li><a href="privacidad.html">Política de Privacidad</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p>
+          <a href="https://wa.me/573213537843?text=Hola%20VirtualCar,%20necesito%20información%20sobre%20un%20repuesto" target="_blank" style="color:inherit; text-decoration:none;">
+            <i class="fas fa-phone-alt" style="color:var(--dorado)"></i> 321 353 7843
+          </a>
+        </p>
+        
+        <div class="socials">
+          <a href="https://www.instagram.com/virtualcarsas/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/virtualcarsas/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.tiktok.com/@virtualcar.com.co/video/7204649369830804741" target="_blank"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.youtube.com/channel/UCwXcfOoZX6VvFZ45_KS2lFA" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <div class="float-cart" id="float-cart">Mi Carrito (0)</div>
+  <aside class="cart-panel" id="cart-panel">
+    <div class="cart-header">
+        <h3>Tu Carrito</h3>
+        <button class="cart-close-btn" onclick="closeCart()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items-list" id="cart-items"></div>
+    <div style="margin-top:auto; padding-top:15px; border-top:1px solid #ddd">
+        <div style="display:flex; justify-content:space-between; font-size:20px; font-weight:800; margin-bottom:15px">
+            <span>Total:</span><span id="cart-total">$0</span>
+        </div>
+        <button class="btn-cta checkout-btn">Pagar con Mercado Pago</button>
+    </div>
+  </aside>
+
+  <script>
+       const products = [
+  {
+    id: 1,
+    title: 'Pastilla de freno - Toyota Corolla',
+    cat: 'frenos',
+    price: 120000,
+    /* Pega aquí el link de la imagen entre comillas */
+    img: 'data:image/jpeg;base64,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', 
+    compat: {marca: 'toyota', modelo: 'Corolla', anno: '2015'},
+    desc: 'Frenado seguro.'
+  },
+  {
+    id: 2,
+    title: 'Bomba de Agua - Chevrolet Aveo',
+    cat: 'motor',
+    price: 220000,
+    /* Pega aquí el link de la imagen entre comillas */
+    img: 'data:image/jpeg;base64,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',
+    compat: {marca: 'chevrolet', modelo: 'Aveo', anno: '2010'},
+    desc: 'Original.'
+  },
+  {
+    id: 3,
+    title: 'Amortiguador - Mazda 3',
+    cat: 'suspension',
+    price: 310000,
+    /* Pega aquí el link de la imagen entre comillas */
+    img: 'https://autopartesercar.com/wp-content/uploads/2022/07/Diseno-sin-titulo-79.png',
+    compat: {marca: 'mazda', modelo: '3', anno: '2018'},
+    desc: 'Importado.'
+  },
+  {
+    id: 3,
+    title: 'kit de embrague - Nissan Np300 yd25 2025-',
+    cat: 'Motor y Componentes',
+    price: 1360000,
+    /* Pega aquí el link de la imagen entre comillas */
+    img: 'https://i.postimg.cc/1tJ9ZVpX/Kit-Embrague-Nissan-Frontier-2014-2015-2016-2017-2500-Diesel-4x4-YD25-Repuesto-Virtual-Car-com-co.png',
+    compat: {marca: 'Nissan', modelo: 'NP300', anno: '2015'},
+    desc: 'Importado.'
+  },
+  {
+    id: 3,
+    title: 'Amortiguador - Mazda 3',
+    cat: 'suspension',
+    price: 310000,
+    /* Pega aquí el link de la imagen entre comillas */
+    img: 'https://autopartesercar.com/wp-content/uploads/2022/07/Diseno-sin-titulo-79.png',
+    compat: {marca: 'mazda', modelo: '3', anno: '2018'},
+    desc: 'Importado.'
+  },
+  {
+    id: 3,
+    title: 'Amortiguador - Mazda 3',
+    cat: 'suspension',
+    price: 310000,
+    /* Pega aquí el link de la imagen entre comillas */
+    img: 'https://autopartesercar.com/wp-content/uploads/2022/07/Diseno-sin-titulo-79.png',
+    compat: {marca: 'mazda', modelo: '3', anno: '2018'},
+    desc: 'Importado.'
+  },
+  {
+    id: 3,
+    title: 'Amortiguador - Mazda 3',
+    cat: 'suspension',
+    price: 310000,
+    /* Pega aquí el link de la imagen entre comillas */
+    img: 'https://autopartesercar.com/wp-content/uploads/2022/07/Diseno-sin-titulo-79.png',
+    compat: {marca: 'mazda', modelo: '3', anno: '2018'},
+    desc: 'Importado.'
+  },
+  {
+    id: 3,
+    title: 'Amortiguador - Mazda 3',
+    cat: 'suspension',
+    price: 310000,
+    /* Pega aquí el link de la imagen entre comillas */
+    img: 'https://autopartesercar.com/wp-content/uploads/2022/07/Diseno-sin-titulo-79.png',
+    compat: {marca: 'mazda', modelo: '3', anno: '2018'},
+    desc: 'Importado.'
+  }
+];
+
+    const productsContainer = document.getElementById('products');
+    const cartPanel = document.getElementById('cart-panel');
+    const cartItemsEl = document.getElementById('cart-items');
+    const cartTotalEl = document.getElementById('cart-total');
+    const floatCart = document.getElementById('float-cart');
+    let cart = [];
+
+    function formatPrice(n){ return '$' + n.toLocaleString('es-CO'); }
+
+       function renderProducts(list){
+      productsContainer.innerHTML = list.length ? '' : '<p>No hay resultados.</p>';
+      list.forEach(p=>{
+        const el = document.createElement('article');
+        el.className='product';
+        el.innerHTML = `
+          <div class="thumb">
+            <img src="${p.img}" alt="${p.title}" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <h5>${p.title}</h5>
+          <div class="price">${formatPrice(p.price)}</div>
+          <button class="add" onclick="addToCart(${p.id})">Añadir al carrito</button>`;
+        productsContainer.appendChild(el);
+      })
+    }
+
+    function addToCart(id){
+      const p = products.find(x=>x.id===id);
+      cart.push(p);
+      updateCartUI();
+      cartPanel.classList.add('open');
+    }
+
+    function updateCartUI(){
+      cartItemsEl.innerHTML = '';
+      let total = 0;
+      cart.forEach(i=>{
+        total += i.price;
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `<span>${i.title}</span> <span>${formatPrice(i.price)}</span>`;
+        cartItemsEl.appendChild(div);
+      });
+      cartTotalEl.textContent = formatPrice(total);
+      floatCart.textContent = `Mi Carrito (${cart.length})`;
+    }
+
+    function closeCart(){ cartPanel.classList.remove('open'); }
+    document.getElementById('open-cart-header').addEventListener('click', () => cartPanel.classList.add('open'));
+    floatCart.addEventListener('click', () => cartPanel.classList.add('open'));
+
+    const marcaEl = document.getElementById('marca');
+    marcaEl.addEventListener('change', (e) => {
+        const m = document.getElementById('modelo');
+        m.innerHTML = '<option value="">Modelo</option>';
+        if(e.target.value === 'toyota') m.innerHTML += '<option value="Corolla">Corolla</option>';
+        if(e.target.value === 'chevrolet') m.innerHTML += '<option value="Aveo">Aveo</option>';
+    });
+
+    renderProducts(products);
+</script>
+</body>
+</html>

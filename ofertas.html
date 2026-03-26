@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ofertas Especiales - VirtualCar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --turquesa: #00ffe6;
+      --negro: #000000;
+      --blanco: #ffffff;
+      --dorado: #a8990b;
+      --gris-bg: #f6f7f8;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background-color: var(--gris-bg);
+      color: var(--negro);
+    }
+    header {
+      background: var(--negro);
+      color: var(--blanco);
+      padding: 20px 0;
+      text-align: center;
+      border-bottom: 4px solid var(--turquesa);
+    }
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .promo-banner {
+      background: linear-gradient(135deg, var(--negro) 0%, #1a1a1a 100%);
+      color: var(--blanco);
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      margin-bottom: 40px;
+      border: 1px solid var(--turquesa);
+    }
+    .promo-banner h1 { font-family: 'Montserrat'; font-size: 36px; margin: 0; color: var(--turquesa); }
+    .promo-banner p { font-size: 18px; color: var(--dorado); font-weight: 500; }
+
+    .offers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 25px;
+    }
+    .offer-card {
+      background: var(--blanco);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      position: relative;
+      border: 1px solid #eee;
+    }
+    .badge-discount {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: var(--dorado);
+      color: var(--negro);
+      padding: 5px 12px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 14px;
+    }
+    .offer-card i { font-size: 50px; color: var(--turquesa); margin-bottom: 15px; }
+    .offer-card h3 { font-family: 'Montserrat'; font-size: 18px; margin: 10px 0; }
+    .price-tag { font-size: 22px; font-weight: 800; color: var(--negro); }
+    .old-price { font-size: 16px; color: #999; text-decoration: line-through; margin-right: 8px; }
+
+    .btn-buy {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      background: var(--turquesa);
+      color: var(--negro);
+      border: none;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Montserrat';
+    }
+    .btn-back {
+      display: inline-block;
+      margin-top: 30px;
+      color: var(--negro);
+      text-decoration: underline;
+      font-weight: 500;
+    }
+
+    /* Panel del Carrito */
+    #cart-panel {
+      position: fixed;
+      right: 0;
+      top: 0;
+      height: 100vh;
+      width: 350px;
+      background: white;
+      box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+      transform: translateX(100%);
+      transition: 0.3s;
+      padding: 20px;
+      z-index: 2000;
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div style="font-family: 'Montserrat'; font-weight: 800; font-size: 24px;">VIRTUALCAR</div>
+  </header>
+
+  <main class="container">
+    <div class="promo-banner">
+      <h1>OFERTAS RELÁMPAGO</h1>
+      <p>Repuestos certificados con hasta el 30% de descuento</p>
+    </div>
+
+    <div class="offers-grid">
+      <div class="offer-card">
+        <span class="badge-discount">-20%</span>
+        <i class="fas fa-tools"></i>
+        <h3>Kit de Frenos Toyota</h3>
+        <div class="price-tag"><span class="old-price">$150.000</span>$120.000</div>
+        <button class="btn-buy">Añadir al carrito</button>
+      </div>
+
+      <div class="offer-card">
+        <span class="badge-discount">-15%</span>
+        <i class="fas fa-oil-can"></i>
+        <h3>Filtro de Aceite Premium</h3>
+        <div class="price-tag"><span class="old-price">$45.000</span>$38.250</div>
+        <button class="btn-buy">Añadir al carrito</button>
+      </div>
+
+      <div class="offer-card">
+        <span class="badge-discount">-30%</span>
+        <i class="fas fa-car-battery"></i>
+        <h3>Batería 12V Pro</h3>
+        <div class="price-tag"><span class="old-price">$380.000</span>$266.000</div>
+        <button class="btn-buy">Añadir al carrito</button>
+      </div>
+    </div>
+
+    <div style="text-align: center;">
+      <a href="ProyectoSenaVirtualcar.com.co.html" class="btn-back"><i class="fas fa-chevron-left"></i> Volver al catálogo completo</a>
+    </div>
+  </main>
+
+  <aside id="cart-panel">
+    <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid var(--turquesa);padding-bottom:10px;">
+        <h3 style="margin:0;font-family:Montserrat;">Tu Carrito</h3>
+        <button onclick="closeCart()" style="background:none;border:none;font-size:24px;cursor:pointer;">&times;</button>
+    </div>
+    <div id="cart-items" style="flex-grow:1;padding-top:20px;color:#666;">
+        <p style="text-align:center;">Tu carrito está vacío.</p>
+    </div>
+    <button style="background:var(--turquesa);border:none;padding:15px;width:100%;font-weight:700;cursor:pointer;border-radius:10px;font-family:Montserrat;">Pagar ahora</button>
+  </aside>
+
+  <script>
+    const cartPanel = document.getElementById('cart-panel');
+    const cartItemsEl = document.getElementById('cart-items');
+
+    function openCart() {
+        cartPanel.style.transform = 'translateX(0)';
+    }
+
+    function closeCart() {
+        cartPanel.style.transform = 'translateX(100%)';
+    }
+
+    document.querySelectorAll('.btn-buy').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const card = e.target.closest('.offer-card');
+            const productName = card.querySelector('h3').textContent;
+            const productPrice = card.querySelector('.price-tag').lastChild.textContent;
+
+            cartItemsEl.innerHTML = `
+                <div style="display:flex; align-items:center; gap:10px; padding:10px; border-bottom:1px solid #eee; margin-bottom:10px;">
+                    <i class="fas fa-tag" style="color:var(--turquesa)"></i>
+                    <div style="text-align:left">
+                        <div style="font-weight:bold; color:black; font-size:14px;">${productName}</div>
+                        <div style="color:var(--turquesa); font-weight:700;">${productPrice}</div>
+                        <div style="font-size:11px; color:var(--dorado)">¡Oferta aplicada!</div>
+                    </div>
+                </div>
+                <p style="font-size:12px; color:#888; text-align:center;">Producto añadido correctamente.</p>
+            `;
+            openCart();
+        });
+    });
+  </script>
+</body>
+</html>

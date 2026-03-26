@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quiénes Somos - VirtualCar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --turquesa: #00ffe6;
+      --negro: #000000;
+      --blanco: #ffffff;
+      --gris-bg: #f6f7f8;
+      --dorado: #a8990b;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background-color: var(--gris-bg);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--negro);
+      color: var(--blanco);
+      padding: 20px 0;
+      text-align: center;
+      border-bottom: 4px solid var(--turquesa);
+    }
+    .hero-nosotros {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1486006396123-c7756711b304?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .hero-nosotros h1 { font-family: 'Montserrat'; font-size: 40px; margin: 0; }
+    
+    .content-section {
+      max-width: 900px;
+      margin: -40px auto 40px;
+      background: var(--blanco);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .grid-mv {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .mv-card {
+      padding: 25px;
+      border-top: 4px solid var(--turquesa);
+      background: #fafafa;
+      border-radius: 0 0 15px 15px;
+    }
+    .mv-card h2 { font-family: 'Montserrat'; color: var(--negro); font-size: 20px; }
+    
+    .values-list {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 40px;
+      gap: 20px;
+    }
+    .value-item { text-align: center; width: 150px; }
+    .value-item i { font-size: 30px; color: var(--dorado); margin-bottom: 10px; }
+    .value-item p { font-weight: 700; font-family: 'Montserrat'; font-size: 14px; }
+
+    .btn-home {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 25px;
+      background: var(--turquesa);
+      color: var(--negro);
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 10px;
+      font-family: 'Montserrat';
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div style="font-family: 'Montserrat'; font-weight: 800; font-size: 24px;">VIRTUALCAR</div>
+  </header>
+
+  <section class="hero-nosotros">
+    <h1>Pasión por las Autopartes</h1>
+    <p>Llevamos la tecnología al mantenimiento de tu vehículo.</p>
+  </section>
+
+  <main class="content-section">
+    <h2>Nuestra Historia</h2>
+    <p>VirtualCar nació en Bogotá con el objetivo de revolucionar la compra de repuestos en línea. Entendemos que encontrar la pieza exacta puede ser un dolor de cabeza, por eso creamos una plataforma donde la <strong>compatibilidad está garantizada</strong>.</p>
+
+    <div class="grid-mv">
+      <div class="mv-card">
+        <h2><i class="fas fa-bullseye"></i> Misión</h2>
+        <p>Proveer a los colombianos las mejores autopartes con un sistema inteligente que elimine errores en la compra.</p>
+      </div>
+      <div class="mv-card">
+        <h2><i class="fas fa-eye"></i> Visión</h2>
+        <p>Ser la plataforma líder en e-commerce de repuestos en Latinoamérica para el año 2030.</p>
+      </div>
+    </div>
+
+    <div class="values-list">
+      <div class="value-item"><i class="fas fa-check-circle"></i><p>Calidad Certificada</p></div>
+      <div class="value-item"><i class="fas fa-handshake"></i><p>Confianza Total</p></div>
+      <div class="value-item"><i class="fas fa-bolt"></i><p>Rapidez Express</p></div>
+    </div>
+
+    <div style="text-align: center;">
+      <a href="ProyectoSenaVirtualcar.com.co.html" class="btn-home">Volver al Inicio</a>
+    </div>
+  </main>
+
+</body>
+</html>
